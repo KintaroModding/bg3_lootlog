@@ -13,6 +13,10 @@ Logs all loot your party gets, also from auto-loot mods, in a filterable in-game
 - A pop-up and a chime tell you about new loot of the rarity you choose (Uncommon and better by default).
 - Each savegame keeps its own log (the newest 500 entries).
 
+## Screenshots
+
+![The Loot Log window: filters, options, and the log with the current place and the source of each item](docs/screen1.png)
+
 ## How to install
 
 1. Install [Norbyte's Script Extender](https://github.com/Norbyte/bg3se). It updates itself.
