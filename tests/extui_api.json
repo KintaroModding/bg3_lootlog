@@ -1,0 +1,884 @@
+{
+ "aliases": {
+  "GuiColor": [
+   "Border",
+   "BorderShadow",
+   "Button",
+   "ButtonActive",
+   "ButtonHovered",
+   "CheckMark",
+   "ChildBg",
+   "DragDropTarget",
+   "FrameBg",
+   "FrameBgActive",
+   "FrameBgHovered",
+   "Header",
+   "HeaderActive",
+   "HeaderHovered",
+   "MenuBarBg",
+   "ModalWindowDimBg",
+   "NavHighlight",
+   "NavWindowingDimBg",
+   "NavWindowingHighlight",
+   "PlotHistogram",
+   "PlotHistogramHovered",
+   "PlotLines",
+   "PlotLinesHovered",
+   "PopupBg",
+   "ResizeGrip",
+   "ResizeGripActive",
+   "ResizeGripHovered",
+   "ScrollbarBg",
+   "ScrollbarGrab",
+   "ScrollbarGrabActive",
+   "ScrollbarGrabHovered",
+   "Separator",
+   "SeparatorActive",
+   "SeparatorHovered",
+   "SliderGrab",
+   "SliderGrabActive",
+   "Tab",
+   "TabActive",
+   "TabDimmedSelectedOverline",
+   "TabHovered",
+   "TabUnfocused",
+   "TabUnfocusedActive",
+   "TableBorderLight",
+   "TableBorderStrong",
+   "TableHeaderBg",
+   "TableRowBg",
+   "TableRowBgAlt",
+   "Text",
+   "TextDisabled",
+   "TextLink",
+   "TextSelectedBg",
+   "TitleBg",
+   "TitleBgActive",
+   "TitleBgCollapsed",
+   "WindowBg"
+  ],
+  "GuiCond": [
+   "Always",
+   "Appearing",
+   "FirstUseEver",
+   "Once"
+  ],
+  "GuiMeasureScaling": [
+   "Absolute",
+   "Scaled"
+  ],
+  "GuiStyleVar": [
+   "Alpha",
+   "ButtonTextAlign",
+   "CellPadding",
+   "ChildBorderSize",
+   "ChildRounding",
+   "DisabledAlpha",
+   "FrameBorderSize",
+   "FramePadding",
+   "FrameRounding",
+   "GrabMinSize",
+   "GrabRounding",
+   "ImageBorderSize",
+   "IndentSpacing",
+   "ItemInnerSpacing",
+   "ItemSpacing",
+   "PopupBorderSize",
+   "PopupRounding",
+   "ScrollbarRounding",
+   "ScrollbarSize",
+   "SelectableTextAlign",
+   "SeparatorTextAlign",
+   "SeparatorTextBorderSize",
+   "SeparatorTextPadding",
+   "TabBarBorderSize",
+   "TabBarOverlineSize",
+   "TabBorderSize",
+   "TabRounding",
+   "TableAngledHeadersAngle",
+   "TableAngledHeadersTextAlign",
+   "WindowBorderSize",
+   "WindowMinSize",
+   "WindowPadding",
+   "WindowRounding",
+   "WindowTitleAlign"
+  ],
+  "GuiTableColumnFlags": [
+   "AngledHeader",
+   "DefaultHide",
+   "DefaultSort",
+   "Disabled",
+   "IndentDisable",
+   "IndentEnable",
+   "NoClip",
+   "NoHeaderLabel",
+   "NoHeaderWidth",
+   "NoHide",
+   "NoReorder",
+   "NoResize",
+   "NoSort",
+   "NoSortAscending",
+   "NoSortDescending",
+   "PreferSortAscending",
+   "PreferSortDescending",
+   "WidthFixed",
+   "WidthStretch"
+  ]
+ },
+ "classes": {
+  "Ext_ClientAudio": {
+   "fields": {
+    "GetRTPC": "fun(a1:uint64, a2:string):number",
+    "LoadBank": "fun(a1:string):boolean",
+    "LoadEvent": "fun(a1:string):boolean",
+    "PauseAllSounds": "fun()",
+    "PlayExternalSound": "fun(a1:uint64, a2:string, a3:string, a4:AudioCodec, a5:number?):boolean",
+    "PostEvent": "fun(a1:uint64, a2:string, a3:number?):boolean",
+    "PrepareBank": "fun(a1:string):boolean",
+    "ResetRTPC": "fun(a1:uint64, a2:string)",
+    "ResumeAllSounds": "fun()",
+    "SetRTPC": "fun(a1:uint64, a2:string, a3:number, a4:boolean?):boolean",
+    "SetState": "fun(a1:string, a2:string):boolean",
+    "SetSwitch": "fun(a1:uint64, a2:string, a3:string):boolean",
+    "Stop": "fun(a1:uint64?)",
+    "UnloadBank": "fun(a1:string):boolean",
+    "UnloadEvent": "fun(a1:string):boolean",
+    "UnprepareBank": "fun(a1:string):boolean"
+   },
+   "parent": null
+  },
+  "Ext_ClientIMGUI": {
+   "fields": {
+    "EnableDemo": "fun(a1:boolean)",
+    "GetViewportSize": "fun():ivec2",
+    "LoadFont": "fun(a1:FixedString, a2:string, a3:number):boolean",
+    "NewWindow": "fun(a1:string):ExtuiWindow",
+    "SetFontScaleMultiplier": "fun(a1:number)",
+    "SetScale": "fun(a1:number)",
+    "SetUIScaleMultiplier": "fun(a1:number)"
+   },
+   "parent": null
+  },
+  "Ext_Resource": {
+   "fields": {
+    "Get": "fun(a1:FixedString, a2:ResourceBankType)",
+    "GetAll": "fun(a1:ResourceBankType):FixedString[]"
+   },
+   "parent": null
+  },
+  "ExtuiBulletText": {
+   "fields": {},
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiButton": {
+   "fields": {
+    "MouseButtonLeft": "boolean",
+    "MouseButtonMiddle": "boolean",
+    "MouseButtonRight": "boolean",
+    "Size": "vec2?"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiCheckbox": {
+   "fields": {
+    "Checked": "boolean",
+    "OnChange": "RegistryEntry"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiChildWindow": {
+   "fields": {
+    "AlwaysUseWindowPadding": "boolean",
+    "AutoResizeX": "boolean",
+    "AutoResizeY": "boolean",
+    "Border": "boolean",
+    "ChildAlwaysAutoResize": "boolean",
+    "FrameStyle": "boolean",
+    "NavFlattened": "boolean",
+    "ResizeX": "boolean",
+    "ResizeY": "boolean",
+    "Size": "vec2?"
+   },
+   "parent": "ExtuiWindowBase"
+  },
+  "ExtuiCollapsingHeader": {
+   "fields": {
+    "AllowOverlap": "boolean",
+    "Bullet": "boolean",
+    "CollapsingHeader": "boolean",
+    "DefaultOpen": "boolean",
+    "FramePadding": "boolean",
+    "Framed": "boolean",
+    "Leaf": "boolean",
+    "NavLeftJumpsBackHere": "boolean",
+    "NoAutoOpenOnLog": "boolean",
+    "NoTreePushOnOpen": "boolean",
+    "OpenOnArrow": "boolean",
+    "OpenOnDoubleClick": "boolean",
+    "Selected": "boolean",
+    "SpanAllColumns": "boolean",
+    "SpanAvailWidth": "boolean",
+    "SpanFullWidth": "boolean",
+    "SpanTextWidth": "boolean"
+   },
+   "parent": "ExtuiTreeParent"
+  },
+  "ExtuiColorEdit": {
+   "fields": {
+    "AlphaBar": "boolean",
+    "AlphaNoBg": "boolean",
+    "AlphaOpaque": "boolean",
+    "AlphaPreview": "boolean",
+    "AlphaPreviewHalf": "boolean",
+    "Color": "vec4",
+    "DisplayHSV": "boolean",
+    "DisplayHex": "boolean",
+    "DisplayRGB": "boolean",
+    "Float": "boolean",
+    "HDR": "boolean",
+    "InputHSV": "boolean",
+    "InputRGB": "boolean",
+    "NoAlpha": "boolean",
+    "NoBorder": "boolean",
+    "NoDragDrop": "boolean",
+    "NoInputs": "boolean",
+    "NoLabel": "boolean",
+    "NoOptions": "boolean",
+    "NoPicker": "boolean",
+    "NoSidePreview": "boolean",
+    "NoSmallPreview": "boolean",
+    "NoTooltip": "boolean",
+    "OnChange": "RegistryEntry",
+    "PickerHueBar": "boolean",
+    "PickerHueWheel": "boolean",
+    "Uint8": "boolean"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiColorPicker": {
+   "fields": {
+    "AlphaBar": "boolean",
+    "AlphaNoBg": "boolean",
+    "AlphaOpaque": "boolean",
+    "AlphaPreview": "boolean",
+    "AlphaPreviewHalf": "boolean",
+    "Color": "vec4",
+    "DisplayHSV": "boolean",
+    "DisplayHex": "boolean",
+    "DisplayRGB": "boolean",
+    "Float": "boolean",
+    "HDR": "boolean",
+    "InputHSV": "boolean",
+    "InputRGB": "boolean",
+    "NoAlpha": "boolean",
+    "NoBorder": "boolean",
+    "NoDragDrop": "boolean",
+    "NoInputs": "boolean",
+    "NoLabel": "boolean",
+    "NoOptions": "boolean",
+    "NoPicker": "boolean",
+    "NoSidePreview": "boolean",
+    "NoSmallPreview": "boolean",
+    "NoTooltip": "boolean",
+    "OnChange": "RegistryEntry",
+    "PickerHueBar": "boolean",
+    "PickerHueWheel": "boolean",
+    "Uint8": "boolean"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiColumnDefinition": {
+   "fields": {
+    "AngledHeader": "boolean",
+    "DefaultHide": "boolean",
+    "DefaultSort": "boolean",
+    "Disabled": "boolean",
+    "IndentDisable": "boolean",
+    "IndentEnable": "boolean",
+    "Name": "string",
+    "NoClip": "boolean",
+    "NoHeaderLabel": "boolean",
+    "NoHeaderWidth": "boolean",
+    "NoHide": "boolean",
+    "NoReorder": "boolean",
+    "NoResize": "boolean",
+    "NoSort": "boolean",
+    "NoSortAscending": "boolean",
+    "NoSortDescending": "boolean",
+    "PreferSortAscending": "boolean",
+    "PreferSortDescending": "boolean",
+    "Width": "number",
+    "WidthFixed": "boolean",
+    "WidthStretch": "boolean"
+   },
+   "parent": null
+  },
+  "ExtuiCombo": {
+   "fields": {
+    "HeightLarge": "boolean",
+    "HeightLargest": "boolean",
+    "HeightRegular": "boolean",
+    "HeightSmall": "boolean",
+    "NoArrowButton": "boolean",
+    "NoPreview": "boolean",
+    "OnChange": "RegistryEntry",
+    "Options": "string[]",
+    "PopupAlignLeft": "boolean",
+    "SelectedIndex": "int32",
+    "WidthFitPreview": "boolean"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiDragInt": {
+   "fields": {
+    "AlwaysClamp": "boolean",
+    "ClampOnInput": "boolean",
+    "ClampZeroRange": "boolean",
+    "Components": "int32",
+    "Logarithmic": "boolean",
+    "Max": "ivec4",
+    "Min": "ivec4",
+    "NoInput": "boolean",
+    "NoRoundToFormat": "boolean",
+    "NoSpeedTweaks": "boolean",
+    "OnChange": "RegistryEntry",
+    "Value": "ivec4",
+    "WrapAround": "boolean"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiDragScalar": {
+   "fields": {
+    "AlwaysClamp": "boolean",
+    "ClampOnInput": "boolean",
+    "ClampZeroRange": "boolean",
+    "Components": "int32",
+    "Logarithmic": "boolean",
+    "Max": "vec4",
+    "Min": "vec4",
+    "NoInput": "boolean",
+    "NoRoundToFormat": "boolean",
+    "NoSpeedTweaks": "boolean",
+    "OnChange": "RegistryEntry",
+    "Value": "vec4",
+    "WrapAround": "boolean"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiDummy": {
+   "fields": {
+    "Height": "number",
+    "Width": "number"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiGroup": {
+   "fields": {},
+   "parent": "ExtuiTreeParent"
+  },
+  "ExtuiImage": {
+   "fields": {
+    "Border": "vec4",
+    "ImageData": "ExtuiImageReference",
+    "Tint": "vec4"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiImageButton": {
+   "fields": {
+    "Background": "vec4",
+    "Image": "ExtuiImageReference",
+    "MouseButtonLeft": "boolean",
+    "MouseButtonMiddle": "boolean",
+    "MouseButtonRight": "boolean",
+    "Tint": "vec4"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiImageReference": {
+   "fields": {
+    "Icon": "FixedString",
+    "Size": "vec2",
+    "TextureResource": "FixedString",
+    "UV0": "vec2",
+    "UV1": "vec2"
+   },
+   "parent": null
+  },
+  "ExtuiInputInt": {
+   "fields": {
+    "AllowTabInput": "boolean",
+    "AlwaysOverwrite": "boolean",
+    "AutoSelectAll": "boolean",
+    "CharsDecimal": "boolean",
+    "CharsHexadecimal": "boolean",
+    "CharsNoBlank": "boolean",
+    "CharsScientific": "boolean",
+    "CharsUppercase": "boolean",
+    "Components": "int32",
+    "CtrlEnterForNewLine": "boolean",
+    "DisplayEmptyRefVal": "boolean",
+    "ElideLeft": "boolean",
+    "EnterReturnsTrue": "boolean",
+    "EscapeClearsAll": "boolean",
+    "Multiline": "boolean",
+    "NoHorizontalScroll": "boolean",
+    "NoUndoRedo": "boolean",
+    "OnChange": "RegistryEntry",
+    "ParseEmptyRefVal": "boolean",
+    "Password": "boolean",
+    "ReadOnly": "boolean",
+    "Value": "ivec4"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiInputScalar": {
+   "fields": {
+    "AllowTabInput": "boolean",
+    "AlwaysOverwrite": "boolean",
+    "AutoSelectAll": "boolean",
+    "CharsDecimal": "boolean",
+    "CharsHexadecimal": "boolean",
+    "CharsNoBlank": "boolean",
+    "CharsScientific": "boolean",
+    "CharsUppercase": "boolean",
+    "Components": "int32",
+    "CtrlEnterForNewLine": "boolean",
+    "DisplayEmptyRefVal": "boolean",
+    "ElideLeft": "boolean",
+    "EnterReturnsTrue": "boolean",
+    "EscapeClearsAll": "boolean",
+    "Multiline": "boolean",
+    "NoHorizontalScroll": "boolean",
+    "NoUndoRedo": "boolean",
+    "OnChange": "RegistryEntry",
+    "ParseEmptyRefVal": "boolean",
+    "Password": "boolean",
+    "ReadOnly": "boolean",
+    "Value": "vec4"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiInputText": {
+   "fields": {
+    "AllowTabInput": "boolean",
+    "AlwaysOverwrite": "boolean",
+    "AutoSelectAll": "boolean",
+    "CharsDecimal": "boolean",
+    "CharsHexadecimal": "boolean",
+    "CharsNoBlank": "boolean",
+    "CharsScientific": "boolean",
+    "CharsUppercase": "boolean",
+    "CtrlEnterForNewLine": "boolean",
+    "DisplayEmptyRefVal": "boolean",
+    "ElideLeft": "boolean",
+    "EnterReturnsTrue": "boolean",
+    "EscapeClearsAll": "boolean",
+    "Hint": "string?",
+    "Multiline": "boolean",
+    "NoHorizontalScroll": "boolean",
+    "NoUndoRedo": "boolean",
+    "OnChange": "RegistryEntry",
+    "ParseEmptyRefVal": "boolean",
+    "Password": "boolean",
+    "ReadOnly": "boolean",
+    "SizeHint": "vec2?",
+    "Text": "string"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiMenu": {
+   "fields": {
+    "AddItem": "fun(self:ExtuiMenu, a1:string, a2:string?):ExtuiMenuItem"
+   },
+   "parent": "ExtuiTreeParent"
+  },
+  "ExtuiMenuBar": {
+   "fields": {},
+   "parent": "ExtuiTreeParent"
+  },
+  "ExtuiMenuItem": {
+   "fields": {
+    "Enabled": "boolean",
+    "Shortcut": "string?"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiNewLine": {
+   "fields": {},
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiPopup": {
+   "fields": {
+    "Open": "fun(self:ExtuiPopup, a1:GuiPopupFlags?)"
+   },
+   "parent": "ExtuiWindowBase"
+  },
+  "ExtuiProgressBar": {
+   "fields": {
+    "Overlay": "string",
+    "Size": "vec2",
+    "Value": "number"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiRadioButton": {
+   "fields": {
+    "Active": "boolean",
+    "OnChange": "RegistryEntry"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiRenderable": {
+   "fields": {
+    "Destroy": "fun(self:ExtuiRenderable)",
+    "Handle": "uint64",
+    "Parent": "uint64",
+    "ParentElement": "ImguiHandle",
+    "UserData": "RegistryEntry"
+   },
+   "parent": null
+  },
+  "ExtuiSelectable": {
+   "fields": {
+    "AllowDoubleClick": "boolean",
+    "AllowOverlap": "boolean",
+    "DontClosePopups": "boolean",
+    "Highlight": "boolean",
+    "SelectableDisabled": "boolean",
+    "Selected": "boolean",
+    "Size": "vec2?",
+    "SpanAllColumns": "boolean"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiSeparator": {
+   "fields": {},
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiSeparatorText": {
+   "fields": {},
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiSliderInt": {
+   "fields": {
+    "AlwaysClamp": "boolean",
+    "ClampOnInput": "boolean",
+    "ClampZeroRange": "boolean",
+    "Components": "int32",
+    "Logarithmic": "boolean",
+    "Max": "ivec4",
+    "Min": "ivec4",
+    "NoInput": "boolean",
+    "NoRoundToFormat": "boolean",
+    "NoSpeedTweaks": "boolean",
+    "OnChange": "RegistryEntry",
+    "Value": "ivec4",
+    "Vertical": "boolean",
+    "VerticalSize": "vec2",
+    "WrapAround": "boolean"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiSliderScalar": {
+   "fields": {
+    "AlwaysClamp": "boolean",
+    "ClampOnInput": "boolean",
+    "ClampZeroRange": "boolean",
+    "Components": "int32",
+    "Logarithmic": "boolean",
+    "Max": "vec4",
+    "Min": "vec4",
+    "NoInput": "boolean",
+    "NoRoundToFormat": "boolean",
+    "NoSpeedTweaks": "boolean",
+    "OnChange": "RegistryEntry",
+    "Value": "vec4",
+    "Vertical": "boolean",
+    "VerticalSize": "vec2",
+    "WrapAround": "boolean"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiSortSpec": {
+   "fields": {
+    "ColumnIndex": "int32",
+    "Direction": "GuiSortDirection"
+   },
+   "parent": null
+  },
+  "ExtuiSpacing": {
+   "fields": {},
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiStyledRenderable": {
+   "fields": {
+    "AbsolutePosition": "vec2?",
+    "Activate": "fun(self:ExtuiStyledRenderable)",
+    "AllowDuplicateId": "boolean",
+    "AllowItemOverlap": "boolean",
+    "AutoClosePopups": "boolean",
+    "ButtonRepeat": "boolean",
+    "CanDrag": "boolean",
+    "Disabled": "boolean",
+    "DragDropType": "FixedString",
+    "DragFlags": "GuiDragFlags",
+    "DragPreview": "ImguiHandle",
+    "DropFlags": "GuiDropFlags",
+    "Font": "FixedString",
+    "GetColor": "fun(self:ExtuiStyledRenderable, a1:GuiColor):vec4?",
+    "GetStyle": "fun(self:ExtuiStyledRenderable, a1:GuiStyleVar):number?",
+    "IDContext": "string",
+    "ItemReadOnly": "boolean",
+    "ItemWidth": "number?",
+    "Label": "string",
+    "NoItemNav": "boolean",
+    "NoMarkEdited": "boolean",
+    "NoNavDefaultFocus": "boolean",
+    "NoNavDisableMouseHover": "boolean",
+    "NoTabStop": "boolean",
+    "NoWindowHoverableCheck": "boolean",
+    "OnActivate": "RegistryEntry",
+    "OnClick": "RegistryEntry",
+    "OnDeactivate": "RegistryEntry",
+    "OnDragDrop": "RegistryEntry",
+    "OnDragEnd": "RegistryEntry",
+    "OnDragStart": "RegistryEntry",
+    "OnHoverEnter": "RegistryEntry",
+    "OnHoverLeave": "RegistryEntry",
+    "OnRightClick": "RegistryEntry",
+    "PositionOffset": "vec2?",
+    "RequestActivate": "boolean",
+    "SameLine": "boolean",
+    "SamePosition": "boolean",
+    "SetColor": "fun(self:ExtuiStyledRenderable, a1:GuiColor, a2:vec4)",
+    "SetStyle": "fun(self:ExtuiStyledRenderable, a1:GuiStyleVar, a2:number, a3:number?)",
+    "StatusFlags": "GuiItemStatusFlags",
+    "TextWrapPos": "number?",
+    "Tooltip": "fun(self:ExtuiStyledRenderable):ExtuiTooltip",
+    "Visible": "boolean",
+    "WasHovered": "boolean"
+   },
+   "parent": "ExtuiRenderable"
+  },
+  "ExtuiTabBar": {
+   "fields": {
+    "AddTabItem": "fun(self:ExtuiTabBar, a1:string):ExtuiTabItem",
+    "AutoSelectNewTabs": "boolean",
+    "DrawSelectedOverline": "boolean",
+    "FittingPolicyResizeDown": "boolean",
+    "FittingPolicyScroll": "boolean",
+    "NoCloseWithMiddleMouseButton": "boolean",
+    "NoTabListScrollingButtons": "boolean",
+    "NoTooltip": "boolean",
+    "Reorderable": "boolean",
+    "TabListPopupButton": "boolean"
+   },
+   "parent": "ExtuiTreeParent"
+  },
+  "ExtuiTabItem": {
+   "fields": {
+    "Leading": "boolean",
+    "NoAssumedClosure": "boolean",
+    "NoCloseWithMiddleMouseButton": "boolean",
+    "NoPushId": "boolean",
+    "NoReorder": "boolean",
+    "NoTooltip": "boolean",
+    "SetSelected": "boolean",
+    "Trailing": "boolean",
+    "UnsavedDocument": "boolean"
+   },
+   "parent": "ExtuiTreeParent"
+  },
+  "ExtuiTable": {
+   "fields": {
+    "AddColumn": "fun(self:ExtuiTable, a1:string, a2:GuiTableColumnFlags?, a3:number?)",
+    "AddRow": "fun(self:ExtuiTable):ExtuiTableRow",
+    "AngledHeader": "boolean",
+    "Borders": "boolean",
+    "BordersH": "boolean",
+    "BordersInner": "boolean",
+    "BordersInnerH": "boolean",
+    "BordersInnerV": "boolean",
+    "BordersOuter": "boolean",
+    "BordersOuterH": "boolean",
+    "BordersOuterV": "boolean",
+    "BordersV": "boolean",
+    "ColumnDefs": "ExtuiColumnDefinition[]",
+    "Columns": "uint32",
+    "ContextMenuInBody": "boolean",
+    "FreezeCols": "uint32",
+    "FreezeRows": "uint32",
+    "Hideable": "boolean",
+    "HighlightHoveredColumn": "boolean",
+    "NoBordersInBody": "boolean",
+    "NoBordersInBodyUntilResize": "boolean",
+    "NoClip": "boolean",
+    "NoHostExtendX": "boolean",
+    "NoHostExtendY": "boolean",
+    "NoKeepColumnsVisible": "boolean",
+    "NoPadInnerX": "boolean",
+    "NoPadOuterX": "boolean",
+    "NoSavedSettings": "boolean",
+    "OnSortChanged": "RegistryEntry",
+    "OptimizedDraw": "boolean",
+    "PadOuterX": "boolean",
+    "PreciseWidths": "boolean",
+    "Reorderable": "boolean",
+    "Resizable": "boolean",
+    "RowBg": "boolean",
+    "ScrollX": "boolean",
+    "ScrollY": "boolean",
+    "ShowHeader": "boolean",
+    "Size": "vec2?",
+    "SizingFixedFit": "boolean",
+    "SizingFixedSame": "boolean",
+    "SizingStretchProp": "boolean",
+    "SizingStretchSame": "boolean",
+    "SortMulti": "boolean",
+    "SortTristate": "boolean",
+    "Sortable": "boolean",
+    "Sorting": "ExtuiSortSpec[]"
+   },
+   "parent": "ExtuiTreeParent"
+  },
+  "ExtuiTableCell": {
+   "fields": {},
+   "parent": "ExtuiTreeParent"
+  },
+  "ExtuiTableRow": {
+   "fields": {
+    "AddCell": "fun(self:ExtuiTableRow):ExtuiTableCell",
+    "Headers": "boolean"
+   },
+   "parent": "ExtuiTreeParent"
+  },
+  "ExtuiText": {
+   "fields": {},
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiTextLink": {
+   "fields": {},
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiTooltip": {
+   "fields": {},
+   "parent": "ExtuiWindowBase"
+  },
+  "ExtuiTree": {
+   "fields": {
+    "AllowOverlap": "boolean",
+    "Bullet": "boolean",
+    "CollapsingHeader": "boolean",
+    "DefaultOpen": "boolean",
+    "FramePadding": "boolean",
+    "Framed": "boolean",
+    "Leaf": "boolean",
+    "NavLeftJumpsBackHere": "boolean",
+    "NoAutoOpenOnLog": "boolean",
+    "NoTreePushOnOpen": "boolean",
+    "OnCollapse": "RegistryEntry",
+    "OnExpand": "RegistryEntry",
+    "OpenOnArrow": "boolean",
+    "OpenOnDoubleClick": "boolean",
+    "Selected": "boolean",
+    "SetOpen": "fun(self:ExtuiTree, a1:boolean, a2:GuiCond?)",
+    "SpanAllColumns": "boolean",
+    "SpanAvailWidth": "boolean",
+    "SpanFullWidth": "boolean",
+    "SpanTextWidth": "boolean"
+   },
+   "parent": "ExtuiTreeParent"
+  },
+  "ExtuiTreeParent": {
+   "fields": {
+    "AddBulletText": "fun(self:ExtuiTreeParent, a1:string):ExtuiBulletText",
+    "AddButton": "fun(self:ExtuiTreeParent, a1:string):ExtuiButton",
+    "AddCheckbox": "fun(self:ExtuiTreeParent, a1:string, a2:boolean?):ExtuiCheckbox",
+    "AddChildWindow": "fun(self:ExtuiTreeParent, a1:string):ExtuiChildWindow",
+    "AddCollapsingHeader": "fun(self:ExtuiTreeParent, a1:string):ExtuiCollapsingHeader",
+    "AddColorEdit": "fun(self:ExtuiTreeParent, a1:string, a2:vec3?):ExtuiColorEdit",
+    "AddColorPicker": "fun(self:ExtuiTreeParent, a1:string, a2:vec3?):ExtuiColorPicker",
+    "AddCombo": "fun(self:ExtuiTreeParent, a1:string):ExtuiCombo",
+    "AddDrag": "fun(self:ExtuiTreeParent, a1:string, a2:number?, a3:number?, a4:number?):ExtuiDrag",
+    "AddDragInt": "fun(self:ExtuiTreeParent, a1:string, a2:int32?, a3:int32?, a4:int32?):ExtuiDragInt",
+    "AddDummy": "fun(self:ExtuiTreeParent, a1:number, a2:number):ExtuiDummy",
+    "AddGroup": "fun(self:ExtuiTreeParent, a1:string):ExtuiGroup",
+    "AddIcon": "fun(self:ExtuiTreeParent, a1:FixedString, a2:vec2?):ExtuiIcon",
+    "AddImage": "fun(self:ExtuiTreeParent, a1:FixedString, a2:vec2?, a3:vec2?, a4:vec2?):ExtuiImage",
+    "AddImageButton": "fun(self:ExtuiTreeParent, a1:string, a2:FixedString, a3:vec2?, a4:vec2?, a5:vec2?):ExtuiImageButton",
+    "AddInputInt": "fun(self:ExtuiTreeParent, a1:string, a2:int32?):ExtuiInputInt",
+    "AddInputScalar": "fun(self:ExtuiTreeParent, a1:string, a2:number?):ExtuiInputScalar",
+    "AddInputText": "fun(self:ExtuiTreeParent, a1:string, a2:string?):ExtuiInputText",
+    "AddMenu": "fun(self:ExtuiTreeParent, a1:string):ImguiHandle",
+    "AddNewLine": "fun(self:ExtuiTreeParent):ExtuiNewLine",
+    "AddPopup": "fun(self:ExtuiTreeParent, a1:string):ExtuiPopup",
+    "AddProgressBar": "fun(self:ExtuiTreeParent):ImguiHandle",
+    "AddRadioButton": "fun(self:ExtuiTreeParent, a1:string, a2:boolean?):ExtuiRadioButton",
+    "AddSelectable": "fun(self:ExtuiTreeParent, a1:string, a2:GuiSelectableFlags?, a3:vec2?):ImguiHandle",
+    "AddSeparator": "fun(self:ExtuiTreeParent):ExtuiSeparator",
+    "AddSeparatorText": "fun(self:ExtuiTreeParent, a1:string):ExtuiSeparatorText",
+    "AddSlider": "fun(self:ExtuiTreeParent, a1:string, a2:number?, a3:number?, a4:number?):ExtuiSlider",
+    "AddSliderInt": "fun(self:ExtuiTreeParent, a1:string, a2:int32?, a3:int32?, a4:int32?):ExtuiSliderInt",
+    "AddSpacing": "fun(self:ExtuiTreeParent):ExtuiSpacing",
+    "AddTabBar": "fun(self:ExtuiTreeParent, a1:string):ExtuiTabBar",
+    "AddTable": "fun(self:ExtuiTreeParent, a1:string, a2:uint32):ExtuiTable",
+    "AddText": "fun(self:ExtuiTreeParent, a1:string):ExtuiText",
+    "AddTextLink": "fun(self:ExtuiTreeParent, a1:string):ImguiHandle",
+    "AddTree": "fun(self:ExtuiTreeParent, a1:string):ExtuiTree",
+    "AttachChild": "fun(self:ExtuiTreeParent, a1:ImguiHandle):boolean",
+    "Children": "ImguiHandle[]",
+    "DetachChild": "fun(self:ExtuiTreeParent, a1:ImguiHandle):boolean",
+    "RemoveChild": "fun(self:ExtuiTreeParent, a1:ImguiHandle):boolean"
+   },
+   "parent": "ExtuiStyledRenderable"
+  },
+  "ExtuiWindow": {
+   "fields": {
+    "AddMainMenu": "fun(self:ExtuiWindow):ExtuiMenu",
+    "Closeable": "boolean",
+    "OnClose": "RegistryEntry",
+    "Open": "boolean",
+    "Scaling": "GuiMeasureScaling"
+   },
+   "parent": "ExtuiWindowBase"
+  },
+  "ExtuiWindowBase": {
+   "fields": {
+    "AlwaysAutoResize": "boolean",
+    "AlwaysHorizontalScrollbar": "boolean",
+    "AlwaysVerticalScrollbar": "boolean",
+    "HorizontalScrollbar": "boolean",
+    "LastPosition": "vec2",
+    "LastSize": "vec2",
+    "MenuBar": "boolean",
+    "NoBackground": "boolean",
+    "NoBringToFrontOnFocus": "boolean",
+    "NoCollapse": "boolean",
+    "NoDecoration": "boolean",
+    "NoFocusOnAppearing": "boolean",
+    "NoInputs": "boolean",
+    "NoMouseInputs": "boolean",
+    "NoMove": "boolean",
+    "NoNav": "boolean",
+    "NoNavFocus": "boolean",
+    "NoNavInputs": "boolean",
+    "NoResize": "boolean",
+    "NoSavedSettings": "boolean",
+    "NoScrollWithMouse": "boolean",
+    "NoScrollbar": "boolean",
+    "NoTitleBar": "boolean",
+    "SetBgAlpha": "fun(self:ExtuiWindowBase, a1:number?)",
+    "SetCollapsed": "fun(self:ExtuiWindowBase, a1:boolean, a2:GuiCond?)",
+    "SetContentSize": "fun(self:ExtuiWindowBase, a1:vec2?)",
+    "SetFocus": "fun(self:ExtuiWindowBase)",
+    "SetPos": "fun(self:ExtuiWindowBase, a1:vec2, a2:GuiCond?, a3:vec2?)",
+    "SetScroll": "fun(self:ExtuiWindowBase, a1:vec2?)",
+    "SetSize": "fun(self:ExtuiWindowBase, a1:vec2, a2:GuiCond?)",
+    "SetSizeConstraints": "fun(self:ExtuiWindowBase, a1:vec2?, a2:vec2?)",
+    "UnsavedDocument": "boolean"
+   },
+   "parent": "ExtuiTreeParent"
+  }
+ }
+}

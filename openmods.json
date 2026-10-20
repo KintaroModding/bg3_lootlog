@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openmods.nexus/openmods.schema.json",
+  "openmods": 1,
+  "name": "Loot Log",
+  "summary": "Logs all loot your party gets, also from auto-loot mods, in a filterable in-game window with an optional pop-up and chime.",
+  "games": ["baldurs-gate-3"],
+  "tags": ["quality-of-life", "ui"],
+  "requires": ["Norbyte's Script Extender"],
+  "gameVersions": ["Patch 8"]
+}
